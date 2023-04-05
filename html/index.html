@@ -30,7 +30,7 @@
         <li class="nav-item"><a href="">Curriculum</a></li>
         <li class="nav-item nav-contact" onclick="ShowContactMenu()">Contact</li>
         <li class="nav-item right-nav-item login-navbar"><button id="login-button">Login</button></li>
-        <li class="nav-item signup-navbar"><button class="logs">Register</button></li> 
+        <li class="nav-item signup-navbar"><button id = "register-button" class="logs">Register</button></li> 
         
       </ul>
     </nav>    
@@ -50,6 +50,30 @@
     <button type="submit" style="background-color: #00adb5; color: #fff; border: none; padding: 8px;">Submit</button>
   </form>
 </div>
+
+<div id="register-form" class="form" style="display:none;">
+  <h2>Register</h2>
+  <form>
+    <div class="ipf">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="ipf">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="ipf">
+      <label for="password-repeat">Repeat Password</label>
+      <input type="password" id="password-repeat" name="password-repeat" required>
+    </div>
+    <div class="buttons">
+      <button type="cancel" class="button cancel">Cancel</button>
+      <button type="submit" class="button register">Register</button>
+      
+    </div>
+  </form>
+</div>
+
 
 <div class="message-box">
   

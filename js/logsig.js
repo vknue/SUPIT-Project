@@ -1,17 +1,25 @@
+var loggedIn = false; // Default value for login status
+var loginFormActive = false; // Default value for login form status
+var registerFormActive = false; // Default value for register form status
+
 const handleLogin = () => {
   console.log("login button clicked");
-  $("#login-form").toggle("slow");
-  if (loggedIn) {
-    console.log("logged in");
+  if (!registerFormActive) {
     // Show the login form if user is already logged in
-    $("#login-form").show();
+    $("#login-form").toggle("slow");
+    loginFormActive = !loginFormActive;
+  }
+};
+const handleRegister = () => {
+  if (!loginFormActive) {
+    $("#register-form").toggle("slow");
+    registerFormActive = !registerFormActive;
   }
 };
 
 $(document).ready(function () {
-  var loggedIn = false; // Default value for login status
-
   $("#login-button").click(handleLogin);
+  $("#register-button").click(handleRegister);
 
   $(".message-box").hide();
 

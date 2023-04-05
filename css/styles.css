@@ -262,4 +262,99 @@ body {
   100% {
     opacity: 0;
   }
+}
+#register-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--three);
+  padding: 20px;
+  z-index: 2;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 18%;
+}
+#register-form h2 {
+  color: var(--one);
+  margin-top: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+#register-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--one);
+}
+#register-form input[type=text],
+#register-form input[type=password] {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: #222831;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+#register-form .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+#register-form .buttons button[type=submit] {
+  background-color: #00adb5;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#register-form .buttons button[type=cancel] {
+  margin-right: 25px;
+  background-color: #f55d90;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.ipf {
+  width: 90%;
+}
+
+.message-box {
+  position: fixed;
+  top: 30px;
+  right: 0;
+  padding: 10px;
+  background-color: #00adb5;
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: 500;
+  display: none;
+}
+.message-box.error {
+  background-color: #f55d90;
+}
+
+.show {
+  display: block;
+  animation: fade-out 3s forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
