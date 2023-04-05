@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Petar Markota</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <img
+        src="/img/burger-menu.png"
+        alt="burger-icon"
+        class="burger-icon"
+        width="75"
+        onclick="toggleMenu()"
+        onmousedown="changeLight()"
+        onmouseup="changeDark()"
+      /><a href=""
+        ><img src="/img/LOGO.png" alt="PMlogo" class="logo" width="250px"
+      /></a>
+
+      <ul id="menu">
+        <li class="nav-item nav-home"><a href="/html/index.html">Home</a></li>
+        <li class="nav-item"><a href="">About us</a></li>
+        <li class="nav-item"><a href="">News</a></li>
+        <li class="nav-item"><a href="">Curriculum</a></li>
+        <li class="nav-item nav-contact" onclick="ShowContactMenu()">Contact</li>
+        <li class="nav-item right-nav-item login-navbar"><button id="login-button">Login</button></li>
+        <li class="nav-item signup-navbar"><button class="logs">Register</button></li> 
+        
+      </ul>
+    </nav>    
+    <div id="overlay"></div>
+    
+<div id="login-form" style="display:none;">
+  <h2>Login</h2>
+  <form>
+    <div>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" style="background-color: #eeeeee; border: none; padding: 8px;">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" style="background-color: #eeeeee; border: none; padding: 8px;">
+    </div>
+    <button type="submit" style="background-color: #00adb5; color: #fff; border: none; padding: 8px;">Submit</button>
+  </form>
+</div>
+
+<div class="message-box">
+  
+</div>
+
+
+
+    <div id="contact-form-container">
+      <form action="https://www.fulek.com/mvc/supit/project-contact-form" method="get" class="contact-form">
+        <div class="form-name form-part">
+          <label for="FullName" aria-placeholder="Gustavo Achong"
+            >Enter your full name: </label
+          ><br />
+          <input type="text" name="FullName" id="name" class="form-input" required />
+        </div>
+        <div class="form-email form-part ">
+          <label for="email" aria-placeholder="gustavo.achong@gmail.com"
+            >Enter your email: </label
+          ><br />
+          <input type="email" name="email" id="email" class="form-input" required />
+        </div>
+        <div class="form-importance form-part">
+          <label for="importance">Importance:</label><br />
+          <select name="importance" id="importance">
+            <option value="">--Please choose an option--</option>
+            <option value="low-importance">Low importance</option>
+            <option value="normal-importance">Normal importance</option>
+            <option value="high-importance">High importance</option>
+            <option value="highest-importance" class="highest-importance">
+              Highest importance
+            </option>
+          </select>
+        </div>
+        <div class="form-newsletter form-part">
+          <label for="ReceiveNewsletter">Recieve newsletter: </label
+          ><input
+            type="checkbox"
+            name="ReceiveNewsletter" checked="checked"
+            id="recieve-newsletter" value="true"
+          />
+        </div>
+        <div class="form-message form-part">
+          <label for="message">Your message:</label><br /><textarea
+            name="message"
+            id="message"
+            cols="50"
+            rows="10"
+          >
+  ...</textarea class="form-input"
+          required>
+        </div>
+        <input type="submit" value="submit">
+      </form>
+    </div>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/logsig.js"></script>
+  </body>
+</html>
