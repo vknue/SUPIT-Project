@@ -1,9 +1,17 @@
+const handleLogin = () => {
+  console.log("login button clicked");
+  $("#login-form").toggle("slow");
+  if (loggedIn) {
+    console.log("logged in");
+    // Show the login form if user is already logged in
+    $("#login-form").show();
+  }
+};
+
 $(document).ready(function () {
   var loggedIn = false; // Default value for login status
 
-  $("#login-button").click(function () {
-    $("#login-form").toggle("slow");
-  });
+  $("#login-button").click(handleLogin);
 
   $(".message-box").hide();
 
@@ -67,12 +75,14 @@ $(document).ready(function () {
           $("#menu").append(
             '<li class="logout-navbar"><a href="#" id="logout-button" >Log out</a></li>'
           );
-          $(".message-box")
-            .addClass("success")
-            .css("display", "block"); // Add the "success" class and set the display to "block"
+          $(".message-box").addClass("success").css("display", "block"); // Add the "success" class and set the display to "block"
           // Re-add click event listener to the login button
           $("#login-button").click(function () {
             $("#login-form").toggle("slow");
+            if (loggedIn) {
+              // Show the login form if user is already logged in
+              $("#login-form").show();
+            }
           });
         }
       },
@@ -94,17 +104,20 @@ $(document).ready(function () {
     });
   });
 
- 
-
-
   $(document).on("click", "#logout-button", function () {
     // Set the login status to false
     loggedIn = false;
     // Remove the logout button from the navbar
     $("#logout-button").remove();
     // Add the login and register buttons back to the navbar
-    $("#menu").append('<li class="nav-item right-nav-item login-navbar"><button id="login-button">Login</button></li>');
-    $("#menu").append('<li class="nav-item signup-navbar"><button class="logs">Register</button></li> ');
-    // Show the login form
-//$("#login-form").show();
-})});
+    $("#menu").append(
+      '<li class="nav-item right-nav-item login-navbar"><button id="login-button">Login</button></li>'
+    );
+    document
+      .getElementById("login-button")
+      .addEventListener("click", handleLogin);
+    $("#menu").append(
+      '<li class="nav-item signup-navbar"><button class="logs">Register</button></li> '
+    );
+  });
+});

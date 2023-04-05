@@ -48,7 +48,7 @@ mq.addEventListener("change", toggleItem);
 
 toggleItem();
 
-toggleIcon.addEventListener("click", toggleNavbar);
+//toggleIcon.addEventListener("click", toggleNavbar);
 
 function changeLight() {
   burger.style.backgroundColor = "#46494e";
