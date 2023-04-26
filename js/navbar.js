@@ -43,6 +43,13 @@ function toggleItem() {
     }
   }
 }
+const contactLink = document.getElementById("contact-link");
+const contactForm = document.getElementById("contact-form-container");
+
+function showContactForm() {
+  var contactForm = document.getElementById("contact-form-container");
+  contactForm.style.display = "block";
+}
 
 mq.addEventListener("change", toggleItem);
 

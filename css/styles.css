@@ -73,6 +73,10 @@ body {
   cursor: pointer;
 }
 
+.red-box {
+  background-color: red;
+}
+
 @media (max-width: 600px) {
   .navbar {
     padding-left: 5px;
@@ -141,43 +145,31 @@ body {
     padding-left: 0px;
   }
 }
-#contact-form-container {
+.hidden {
   display: none;
-  z-index: 10;
 }
 
-.contact-form {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-  background-color: var(--three);
-  color: var(--one);
-  font-size: 18px;
-  border-radius: 1.2rem;
+#contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 1;
 }
-.contact-form .form-part {
-  padding-top: 10px;
+
+.form-group {
+  margin-bottom: 1rem;
 }
-.contact-form #name {
-  font-size: 18px;
+
+.form-check {
+  margin-top: 1rem;
 }
-.contact-form #email {
-  font-size: 18px;
+
+.form-check-label {
+  padding-left: 1.5rem;
 }
-.contact-form #importance {
-  font-size: 18px;
-}
-.contact-form #importance .highest-importance {
-  color: var(--two);
-  font-weight: 600;
-}
-.contact-form .form-input {
-  padding: 0px 3px;
-}
-.contact-form #message {
-  padding: 7px 7px;
-  resize: none;
-  font-size: 18px;
+
+#contact-form-container.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 #overlay {
