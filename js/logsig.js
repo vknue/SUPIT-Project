@@ -57,8 +57,13 @@ $(document).ready(function () {
           $(".message-box")
             .addClass("red-box")
             .css("background-color", "#f55d90");
+          $(".curriculum").css("display", "block");
         } else {
           // Display a success message in the message box and close the login form
+          var token = response.data.token;
+          localStorage.length = 0;
+          sessionStorage.setItem("token", token);
+          sessionStorage.setItem("username", username);
           console.log("valid");
           $(".message-box")
             .addClass("blue-box")
@@ -92,6 +97,7 @@ $(document).ready(function () {
               $("#login-form").show();
             }
           });
+          $(".curriculum").addClass("show-cur").css("display", "block");
         }
       },
 
@@ -197,6 +203,11 @@ $(document).ready(function () {
     // Set the login status to false
     loggedIn = false;
     loginFormActive = false;
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("token");
+
+    $(".curriculum").css("display", "none");
+
     // Remove the logout button from the navbar
     $("#logout-button").remove();
     // Add the login and register buttons back to the navbar
